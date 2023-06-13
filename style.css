@@ -1,0 +1,168 @@
+body {
+    font-family: Inter;
+    margin: 0;
+    padding: 30px;
+    color: black;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  #sections-container{
+    padding: 10px 160px;
+  }
+  
+  .section {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .section.drag-over {
+    background-color: #b01f1f;
+  }
+
+  .section .toggle {
+    margin-left: 10px;
+    float: right;
+  }
+
+  .section .drag {
+    cursor: move;
+  }
+
+  .section .edit {
+    margin-left: 10px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .section .info {
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .section .edit-input {
+    display: none;
+  }
+
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .toggle input[type="checkbox"] {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    top: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .slider .tick,
+  .slider .cross {
+    position: absolute;
+    top: 2px;
+    display: none;
+  }
+
+  .slider .tick {
+    left: 2px;
+  }
+
+  .slider .cross {
+    right: 2px;
+  }
+
+  input[type="checkbox"]:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  input[type="checkbox"]:checked + .slider .tick {
+    display: block;
+  }
+
+  input[type="checkbox"] + .slider .cross {
+    display: block;
+  }
+
+  .description-box {
+    position: absolute;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    color: #fff;
+  }
+
+  .section.clicked .description-box {
+      display: block;
+    }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .btn {
+    padding: 14px 160px;
+    background-color: #8A4893;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .section .name{
+    padding-left: 10px;
+  }
+
+  @media (max-width: 600px) {
+    body {
+        font-family: Inter;
+        margin: 0;
+        padding: 10px;
+        color: black;
+        font-size: 12px;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+    
+      #sections-container{
+        padding: 10px 60px;
+      }
+  }

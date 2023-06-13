@@ -1,156 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Select Your Sections</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-  <style>
-    body {
-      font-family: Inter;
-      margin: 0;
-      padding: 50px;
-    }
-    
-    h1 {
-      text-align: center;
-    }
-
-    #sections-container{
-      padding: 30px 160px;
-    }
-    
-    .section {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .section.drag-over {
-      background-color: #b01f1f;
-    }
-
-    .section .toggle {
-      margin-left: 10px;
-      float: right;
-    }
-
-    .section .drag {
-      cursor: move;
-    }
-
-    .section .edit {
-      margin-left: 10px;
-      cursor: pointer;
-      float: right;
-    }
-
-    .section .info {
-      margin-left: 5px;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .section .edit-input {
-      display: none;
-    }
-
-    .toggle {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 20px;
-    }
-
-    .toggle input[type="checkbox"] {
-      display: none;
-    }
-
-    .slider {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      top: 2px;
-      background-color: #fff;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-
-    .slider .tick,
-    .slider .cross {
-      position: absolute;
-      top: 2px;
-      display: none;
-    }
-
-    .slider .tick {
-      left: 2px;
-    }
-
-    .slider .cross {
-      right: 2px;
-    }
-
-    input[type="checkbox"]:checked + .slider {
-      background-color: #2196F3;
-    }
-
-    input[type="checkbox"]:checked + .slider:before {
-      transform: translateX(20px);
-    }
-
-    input[type="checkbox"]:checked + .slider .tick {
-      display: block;
-    }
-
-    input[type="checkbox"] + .slider .cross {
-      display: block;
-    }
-
-    .description-box {
-      position: absolute;
-      align-items: center;
-      background-color: #301616;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      display: none;
-      color: #fff;
-    }
-
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .btn {
-      padding: 14px 160px;
-      background-color: #8A4893;
-      border-radius: 10px;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    .section .name{
-      padding-left: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Select Your Section</h1>
@@ -158,10 +15,8 @@
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
-      <div class="description-box">
-        <p>This is the description box content.</p>
-      </div>
-      <span class="name">Personal Information1</span>
+      <div class="description-box"><p>In this section you give a brief description of yourself and role you are applying for.</p></div>
+      <span class="name">Profile Summary</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -169,13 +24,14 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
+
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
       <div class="description-box">
-        <p>This is the description box content.</p>
+        <p>In this section you will provide your academic and co-curicullar Activities</p>
       </div>
-      <span class="name">Personal Information2</span>
+      <span class="name">Academic Activities</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -183,13 +39,14 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
+
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
       <div class="description-box">
-        <p>This is the description box content.</p>
+        <p>In this section you will share your summer internship experience</p>
       </div>
-      <span class="name">Personal Information3</span>
+      <span class="name">Summer Internship Experience</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -197,13 +54,14 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
+    
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
       <div class="description-box">
-        <p>This is the description box content.</p>
+        <p>In this section you will provide the detail of work you have performed in different organization</p>
       </div>
-      <span class="name">Personal Information4</span>
+      <span class="name">Work Experience</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -211,13 +69,14 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
+   
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
       <div class="description-box">
-        <p>This is the description box content.</p>
+        <p>In This section you will provide the project you have made in particular domain</p>
       </div>
-      <span class="name">Personal Information5</span>
+      <span class="name">Projects</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -225,13 +84,14 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
+   
     <div class="section">
       <span class="drag">&#x2630;</span>
       <span class="info">&#9432;</span>
       <div class="description-box">
-        <p>This is the description box content.</p>
+        <p>In this section you will provide the cetificates or badge detail you have earn</p>
       </div>
-      <span class="name">Personal Information6</span>
+      <span class="name">Certifications</span>
       <label class="toggle">
         <input type="checkbox">
         <span class="slider"></span>
@@ -239,13 +99,58 @@
       <span class="edit">&#9998;</span>
       <input type="text" class="edit-input">
     </div>
-    <!-- Add more sections here -->
+   
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>In this section you will provide the detail of work which was done under your leadership</p>
+      </div>
+      <span class="name">Leadership Positions</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>In this section you will provide the detail of other activites you are involved in</p>
+      </div>
+      <span class="name">Extra Curricular</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>In this section you will provide the education details.</p>
+      </div>
+      <span class="name">Education</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
   </div>
 
   <div class="btn-container">
     <button class="btn" onclick="saveAndNext()">Save and Next</button>
   </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
@@ -261,7 +166,6 @@
       $("#sections-container .section").each(function() {
         sectionOrder.push($(this).attr("id"));
       });
-      // Here, you can send the sectionOrder to your server or save it locally as per your requirements
       console.log("Section Order:", sectionOrder);
     }
 
@@ -306,12 +210,9 @@
       sectionOrder.push($(this).attr("id"));
     });
 
-    // Store the toggledSections and sectionOrder data in local storage or send it to the server
-    // For example, you can store them in the browser's local storage like this:
     localStorage.setItem("toggledSections", JSON.stringify(toggledSections));
     localStorage.setItem("sectionOrder", JSON.stringify(sectionOrder));
 
-    // Redirect to the new page
     window.location.href = "m.html";
   }
 </script>
