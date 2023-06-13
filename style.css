@@ -84,21 +84,6 @@ body {
     transition: transform 0.3s ease;
   }
 
-  .slider .tick,
-  .slider .cross {
-    position: absolute;
-    top: 2px;
-    display: none;
-  }
-
-  .slider .tick {
-    left: 2px;
-  }
-
-  .slider .cross {
-    right: 2px;
-  }
-
   input[type="checkbox"]:checked + .slider {
     background-color: #2196F3;
   }
@@ -149,7 +134,7 @@ body {
     padding-left: 10px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     body {
         font-family: Inter;
         margin: 0;
@@ -163,6 +148,43 @@ body {
       }
     
       #sections-container{
+        padding: 10px 10px;
+      }
+
+      .btn{
         padding: 10px 60px;
+      }
+  }
+
+  @media (max-width: 350px) {
+    body {
+        font-family: Inter;
+        margin: 0;
+        padding: 10px;
+        color: black;
+        font-size: 10px;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+    
+      #sections-container{
+        padding: 10px 8px;
+      }
+
+      .btn{
+        padding: 10px 60px;
+      }
+
+      .section .name{
+        padding-left: 5px;
+      }
+      .section .edit {
+        margin-left: 5px;
+      }
+      .section .toggle {
+        margin-left: 5px;
+        float: right;
       }
   }
