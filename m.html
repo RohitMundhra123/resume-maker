@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Page</title>
+</head>
+<body>
+  <h1>Selected Sections</h1>
+  <ul id="selected-sections"></ul>
+
+  <script>
+    // Retrieve stored data from local storage
+    var toggledSections = JSON.parse(localStorage.getItem("toggledSections"));
+    var sectionOrder = JSON.parse(localStorage.getItem("sectionOrder"));
+
+    // Display the toggled sections on the new page
+    var selectedSectionsList = document.getElementById("selected-sections");
+    toggledSections.forEach(function(section) {
+      var li = document.createElement("li");
+      li.textContent = section;
+      selectedSectionsList.appendChild(li);
+    });
+
+    // Clear the stored data from local storage
+    localStorage.removeItem("toggledSections");
+    localStorage.removeItem("sectionOrder");
+  </script>
+</body>
+</html>

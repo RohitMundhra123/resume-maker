@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Your Sections</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <style>
+    body {
+      font-family: Inter;
+      margin: 0;
+      padding: 50px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+
+    #sections-container{
+      padding: 30px 160px;
+    }
+    
+    .section {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .section.drag-over {
+      background-color: #b01f1f;
+    }
+
+    .section .toggle {
+      margin-left: 10px;
+      float: right;
+    }
+
+    .section .drag {
+      cursor: move;
+    }
+
+    .section .edit {
+      margin-left: 10px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .section .info {
+      margin-left: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .section .edit-input {
+      display: none;
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .toggle input[type="checkbox"] {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      top: 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .slider .tick,
+    .slider .cross {
+      position: absolute;
+      top: 2px;
+      display: none;
+    }
+
+    .slider .tick {
+      left: 2px;
+    }
+
+    .slider .cross {
+      right: 2px;
+    }
+
+    input[type="checkbox"]:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input[type="checkbox"]:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    input[type="checkbox"]:checked + .slider .tick {
+      display: block;
+    }
+
+    input[type="checkbox"] + .slider .cross {
+      display: block;
+    }
+
+    .description-box {
+      position: absolute;
+      align-items: center;
+      background-color: #301616;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+      color: #fff;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 14px 160px;
+      background-color: #8A4893;
+      border-radius: 10px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section .name{
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Section</h1>
+  <div id="sections-container">
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information1</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information2</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information3</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information4</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information5</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <div class="section">
+      <span class="drag">&#x2630;</span>
+      <span class="info">&#9432;</span>
+      <div class="description-box">
+        <p>This is the description box content.</p>
+      </div>
+      <span class="name">Personal Information6</span>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="edit">&#9998;</span>
+      <input type="text" class="edit-input">
+    </div>
+    <!-- Add more sections here -->
+  </div>
+
+  <div class="btn-container">
+    <button class="btn" onclick="saveAndNext()">Save and Next</button>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#sections-container").sortable({
+      update: function(event, ui) {
+        saveSectionPositions();
+      }
+    });
+
+    function saveSectionPositions() {
+      var sectionOrder = [];
+      $("#sections-container .section").each(function() {
+        sectionOrder.push($(this).attr("id"));
+      });
+      // Here, you can send the sectionOrder to your server or save it locally as per your requirements
+      console.log("Section Order:", sectionOrder);
+    }
+
+    $(".edit").click(function() {
+      var section = $(this).closest(".section");
+      var nameElement = section.find(".name");
+      var editInput = section.find(".edit-input");
+      var saveIcon = '<span class="save">Save</span>';
+
+      if ($(this).hasClass("save")) {
+        var newName = editInput.val();
+        nameElement.text(newName).show();
+        editInput.hide();
+        $(this).html('&#9998;');
+        $(this).removeClass("save");
+        saveSectionPositions();
+      } else {
+        nameElement.hide();
+        editInput.val(nameElement.text()).show().focus();
+        $(this).html(saveIcon);
+        $(this).addClass("save");
+      }
+    });
+    $(".info").click(function(e) {
+      var section = $(this).closest(".section");
+      section.toggleClass("clicked");
+      e.stopPropagation();
+    });
+
+    $(document).click(function() {
+      $(".section").removeClass("clicked");
+    });
+  });
+
+  function saveAndNext() {
+    var toggledSections = [];
+    var sectionOrder = [];
+    $("#sections-container .section").each(function() {
+      if ($(this).find("input[type='checkbox']").is(":checked")) {
+        toggledSections.push($(this).find(".name").text());
+      }
+      sectionOrder.push($(this).attr("id"));
+    });
+
+    // Store the toggledSections and sectionOrder data in local storage or send it to the server
+    // For example, you can store them in the browser's local storage like this:
+    localStorage.setItem("toggledSections", JSON.stringify(toggledSections));
+    localStorage.setItem("sectionOrder", JSON.stringify(sectionOrder));
+
+    // Redirect to the new page
+    window.location.href = "m.html";
+  }
+</script>
+</body>
+</html>
