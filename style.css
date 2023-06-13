@@ -103,12 +103,13 @@ body {
   .description-box {
     position: absolute;
     align-items: center;
-    background-color: black;
+    background-color: #8A4893;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: none;
     color: #fff;
+    z-index: 1;
   }
 
   .section.clicked .description-box {
